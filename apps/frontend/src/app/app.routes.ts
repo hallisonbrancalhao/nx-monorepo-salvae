@@ -2,8 +2,10 @@ import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {
-    path: 'feature',
+    path: '',
     loadChildren: () =>
-      import('@nx-monorepo-salvae/feature').then((m) => m.featureRoutes),
+      import('@nx-monorepo-salvae/feature-home').then(
+        (m) => m.FeatureHomeModule
+      ),
   },
 ];
