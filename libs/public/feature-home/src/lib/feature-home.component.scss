@@ -1,0 +1,6 @@
+@use '../../../../shared/ui-layout/src/lib/styles/palette' as palette;
+@use 'sass:map' as map;
+
+main {
+  background-color: map.get(palette.$dark-green, 500);
+}
