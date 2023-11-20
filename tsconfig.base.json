@@ -18,6 +18,9 @@
       "@nx-monorepo-salvae/feature-home": [
         "libs/public/feature-home/src/index.ts"
       ],
+      "@nx-monorepo-salvae/feature-shell": [
+        "libs/private/feature-shell/src/index.ts"
+      ],
       "@nx-monorepo-salvae/ui-layout": ["libs/shared/ui-layout/src/index.ts"]
     }
   },
