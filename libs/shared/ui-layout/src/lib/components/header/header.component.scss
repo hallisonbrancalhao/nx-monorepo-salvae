@@ -1,2 +1,135 @@
 @use '../../styles/palette' as palette;
 @use 'sass:map' as map;
+
+.header {
+  background-color: map-get(palette.$green-base, 500);
+  border-bottom: solid 1px map-get(palette.$light-gray, 500 );
+  padding: 0 2rem;
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    img {
+      width: 160px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    menu{
+      display: flex;
+      justify-content: center;
+      list-style: none;
+
+      li {
+        margin: 0 16px;
+      }
+
+      li>a {
+        color: map-get(palette.$light-gray, 100);
+        text-decoration: none;
+        font-weight: 400;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: map-get(palette.$yellow, 500);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  &__actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button{
+      border: solid 1px map-get(palette.$light-gray, 500 );
+      background-color: transparent;
+      padding: 8px 10px;
+      border-radius: 6px;
+      color: map-get(palette.$light-gray, 100);
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: map-get(palette.$yellow, 500);
+        border: solid 1px map-get(palette.$yellow, 500);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .mobile__menu-icon{
+    display: none;
+  }
+
+  .mobile__menu{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  header {
+    nav {
+      padding: 1.5rem 4rem;
+    }
+  }
+
+  .header {
+    &__menu {
+      display: none;
+    }
+
+    &__actions {
+      display: none;
+    }
+
+    .mobile__menu-icon{
+      display: block;
+      cursor: pointer;
+      color: map-get(palette.$light-gray, 100);
+      font-size: 2rem;
+
+      button {
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+      }
+    }
+
+    .mobile__menu {
+      display: block;
+      menu {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+      }
+
+      li {
+        display: block;
+        padding: 1.2rem;
+      }
+
+
+      .header__action {
+        display: block;
+        padding: 1rem 2rem;
+
+        button {
+          width: 100%;
+        }
+      };
+    }
+  }
+}
