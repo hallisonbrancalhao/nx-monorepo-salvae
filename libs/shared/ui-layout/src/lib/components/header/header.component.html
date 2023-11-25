@@ -21,9 +21,19 @@
         @else {
         <img src="{{user$.avatar ?? 'assets/img/default-avatar.svg'}} " alt="Foto de perfil do usuário">
         <span>
-          <p>Bem vindo, {{user$.name}}!</p>
+          <p>Bem vindo, <span>{{user$.name}}!</span></p>
         </span>
         <button routerLink="/dashboard">Dashboard</button>
+        <button (click)="logout()">
+          Sair
+          <svg width="16" height="15" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 5V3C12 2.46957 11.7893 1.96086 11.4142 1.58579C11.0391 1.21071 10.5304 1 10 1H3C2.46957 1 1.96086 1.21071 1.58579 1.58579C1.21071 1.96086 1 2.46957 1 3V15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H10C10.5304 17 11.0391 16.7893 11.4142 16.4142C11.7893 16.0391 12 15.5304 12 15V13"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7 9H19M19 9L16 6M19 9L16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
         }
 
       </div>
@@ -31,10 +41,12 @@
       <!-- MOBILE  -->
 
       <div class="mobile__menu-icon">
-        <button><img class="icon" src="assets/img/menu_white.svg" alt="Abrir menu"></button>
+        <button (click)="toggleMenu()"><img class="icon" src="assets/img/menu_white.svg" alt="Abrir menu"></button>
       </div>
 
     </nav>
+
+    @if(isMobileMenuOpen){
 
     <div class="mobile__menu">
       <menu>
@@ -43,21 +55,36 @@
         <li><a routerLink="">Perguntas Frequentes</a></li>
       </menu>
 
-      <div class="header__actions">
+      <div class="mobile__menu__actions">
 
         @if(!isLogged){
         <button (click)="login()">Entrar</button>
         }
 
         @else {
-        <img src="{{user$.avatar ?? 'assets/img/default-avatar.svg'}} " alt="Foto de perfil do usuário">
-        <span>
-          <p>Bem vindo, {{user$.name}}!</p>
-        </span>
-        <button routerLink="/dashboard">Dashboard</button>
+        <div class="mobile__menu__actions__profile">
+          <img src="{{user$.avatar ?? 'assets/img/default-avatar.svg'}} " alt="Foto de perfil do usuário">
+          <span>
+            <p>Bem vindo, <span> {{user$.name}}!</span></p>
+          </span>
+        </div>
+        <div class="buttons-group">
+          <button routerLink="/dashboard">Dashboard</button>
+          <button routerLink="/">
+            Sair
+            <svg width="16" height="15" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 5V3C12 2.46957 11.7893 1.96086 11.4142 1.58579C11.0391 1.21071 10.5304 1 10 1H3C2.46957 1 1.96086 1.21071 1.58579 1.58579C1.21071 1.96086 1 2.46957 1 3V15C1 15.5304 1.21071 16.0391 1.58579 16.4142C1.96086 16.7893 2.46957 17 3 17H10C10.5304 17 11.0391 16.7893 11.4142 16.4142C11.7893 16.0391 12 15.5304 12 15V13"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M7 9H19M19 9L16 6M19 9L16 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
         }
 
       </div>
     </div>
+    }
   </header>
 </ng-container>

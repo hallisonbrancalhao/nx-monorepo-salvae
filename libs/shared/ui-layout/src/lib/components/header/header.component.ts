@@ -10,8 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  isLogged = false;
-  user$ = { name: 'John Doe', avatar: null };
+  isLogged = true;
+  user$ = { name: 'Lanchão do João', avatar: null };
+  isMobileMenuOpen = true;
 
   logout() {
     console.log('logout');
@@ -21,5 +22,9 @@ export class HeaderComponent {
   login() {
     console.log('login');
     this.isLogged = true;
+  }
+
+  toggleMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 }

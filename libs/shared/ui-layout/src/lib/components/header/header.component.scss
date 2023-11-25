@@ -50,8 +50,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
+    color: map-get(palette.$light-gray, 100);
+    span{
+      font-weight: 300;
+      p>span{
+        font-weight: 500 ;
+      }
+    }
 
     button{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       border: solid 1px map-get(palette.$light-gray, 500 );
       background-color: transparent;
       padding: 8px 10px;
@@ -78,10 +89,10 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   header {
     nav {
-      padding: 1.5rem 4rem;
+      padding: 1rem;
     }
   }
 
@@ -105,10 +116,14 @@
         cursor: pointer;
         background-color: transparent;
       }
+      button>img{
+        color: map-get(palette.$light-gray, 100);
+      }
     }
 
     .mobile__menu {
       display: block;
+      width: 100%;
       menu {
         display: flex;
         flex-direction: column;
@@ -119,17 +134,66 @@
       li {
         display: block;
         padding: 1.2rem;
+        a{
+          color: map-get(palette.$light-gray, 100);
+          text-decoration: none;
+          font-weight: 400;
+        }
       }
 
-
-      .header__action {
+      &__actions{
         display: block;
-        padding: 1rem 2rem;
+        justify-content: center;
+        margin-bottom: 2rem;
 
-        button {
-          width: 100%;
+        .buttons-group{
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
         }
-      };
+
+        .buttons-group>button{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          width: 100%;
+          border: solid 1px map-get(palette.$light-gray, 500 );
+          background-color: transparent;
+          padding: 8px 10px;
+          border-radius: 6px;
+          color: map-get(palette.$light-gray, 100);
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            color: map-get(palette.$yellow, 500);
+            border: solid 1px map-get(palette.$yellow, 500);
+            transition: all 0.3s ease-in-out;
+          }
+        }
+
+        &__profile{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+          gap: 1rem;
+          padding: 1rem 0;
+          color: map-get(palette.$light-gray, 100);
+
+          span{
+            font-weight: 300;
+            p>span{
+              font-weight: 500 ;
+            }
+          }
+
+          img{
+            border-radius: 50%;
+          }
+        }
+      }
     }
   }
 }
