@@ -1,0 +1,27 @@
+<section class="login">
+  <div class="login__container">
+    <div class="login__container__logo">
+      <img src="assets/img/logo.svg" alt="logo" />
+    </div>
+    <div class="login__container__form">
+      <h1>Login</h1>
+      <p>Informe suas credenciais para acessar o sistema</p>
+      <form>
+        <div class="login__container__form__input">
+          <label for="login">
+            <input name="login" type="text" placeholder="Credencial" />
+          </label>
+        </div>
+        <div class="login__container__form__input">
+          <label for="senha">
+            <input name="senha" [type]="showPassword ? 'text' : 'password'" placeholder="Senha" />
+            <mat-icon class="icon" (click)="toggleShowPassword()">visibility</mat-icon>
+          </label>
+        </div>
+        <div class="login__container__form__button">
+          <button type="submit">Entrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

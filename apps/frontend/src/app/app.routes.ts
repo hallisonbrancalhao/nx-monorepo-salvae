@@ -2,6 +2,13 @@ import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
   {
+    path: 'login',
+    loadChildren: () =>
+      import('@nx-monorepo-salvae/feature-login').then(
+        (m) => m.featureLoginRoutes
+      ),
+  },
+  {
     path: 'dashboard',
     loadChildren: () =>
       import('@nx-monorepo-salvae/feature-shell').then(

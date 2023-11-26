@@ -21,6 +21,9 @@
       "@nx-monorepo-salvae/feature-home": [
         "libs/public/feature-home/src/index.ts"
       ],
+      "@nx-monorepo-salvae/feature-login": [
+        "libs/public/feature-login/src/index.ts"
+      ],
       "@nx-monorepo-salvae/feature-shell": [
         "libs/private/feature-shell/src/index.ts"
       ],
