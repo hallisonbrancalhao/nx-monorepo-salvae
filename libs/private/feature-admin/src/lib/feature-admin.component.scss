@@ -1,0 +1,31 @@
+@use '../../../../shared/ui-layout/src/lib/styles/palette' as palette;
+@use 'sass:map' as map;
+
+
+.admin {
+  padding: 2rem;
+  height: calc(100vh - 64px);
+  background-color: map-get(palette.$light-gray, 100);
+}
+
+.card {
+  max-width: 400px;
+  background-color: map-get(palette.$light-gray, 10);
+
+  &__title{
+    font-weight: 500;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: .5rem;
+  }
+  &__image {
+    background-size: cover;
+
+    img {
+      width: 48px;
+    }
+  }
+}

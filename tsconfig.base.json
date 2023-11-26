@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-monorepo-salvae/feature-admin": [
+        "libs/private/feature-admin/src/index.ts"
+      ],
       "@nx-monorepo-salvae/feature-home": [
         "libs/public/feature-home/src/index.ts"
       ],
